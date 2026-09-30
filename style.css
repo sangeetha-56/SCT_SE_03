@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #eef2f7;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #1f2937;
+}
+
+.container {
+    width: 500px;
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    border-top: 5px solid #2563eb;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+
+    text-align: center;
+}
+
+h1 {
+    color: #172554;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+/* Sudoku Grid */
+
+#sudoku-grid {
+    width: 360px;
+
+    height: 360px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(9, 1fr);
+
+    border: 2px solid #172554;
+}
+
+/* Sudoku Cells */
+
+.cell {
+    width: 40px;
+
+    height: 40px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    border: 1px solid #cbd5e1;
+
+    outline: none;
+
+    color: #1e3a8a;
+}
+
+.cell:focus {
+    background-color: #dbeafe;
+}
+
+/* 3 x 3 box borders */
+
+.cell:nth-child(3n) {
+    border-right: 2px solid #172554;
+}
+
+.cell:nth-child(9n) {
+    border-right: none;
+}
+
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid #172554;
+}
+
+/* Buttons */
+
+.buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+button {
+    flex: 1;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+.clear-btn {
+    background-color: #64748b;
+}
+
+.clear-btn:hover {
+    background-color: #475569;
+}
+
+/* Message */
+
+#message {
+    margin-top: 18px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #1e40af;
+}
+
+/* Mobile */
+
+@media (max-width: 550px) {
+
+    .container {
+        width: 95%;
+
+        padding: 20px;
+    }
+
+    #sudoku-grid {
+        width: 315px;
+        height: 315px;
+    }
+
+    .cell {
+        width: 35px;
+        height: 35px;
+    }
+}
